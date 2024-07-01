@@ -1,10 +1,10 @@
 package org.example;
 
-import org.example.util.Prompt;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import org.example.util.Prompt;
 
 class App {
+
     static String[] menus = {"게임 시작", "게임 설명", "종료"};
 
     public static void main(String[] args) {
@@ -16,10 +16,10 @@ class App {
         // print title and menus
         System.out.println("사다리 타기 게임");
         for (int i = 0; i < menus.length; i++) {
-            System.out.println(i+1 + ". " + menus[i]);
+            System.out.println(i + 1 + ". " + menus[i]);
         }
 
-        while(true) {
+        while (true) {
             try {
                 menuNo = Prompt.inputInt("메뉴 선택 >>");
 
@@ -28,12 +28,12 @@ class App {
                         startGame();
                         break;
                     case 2:
-                        readMe();
+                        //readMe();
                         break;
                     case 3:
                         return;
                     case 8417:
-                        testMode();
+                        //testMode();
                         break;
                     default:
                         System.out.println("올바른 값을 입력하세요.");
@@ -51,14 +51,13 @@ class App {
         System.out.println("플레이 할 인원을 정하세요");
         numOfPlayer = Prompt.inputInt("인원 수 입력 >>");
 
-
         for (int i = 0; i < numOfPlayer; i++) {
-            String playerName = Prompt.input("플레이어(" + i+1 + ") 이름 >>");
+            String playerName = Prompt.input("플레이어(" + i + 1 + ") 이름 >>");
             playerNameList.add(playerName);
         }
 
         for (int i = 0; i < numOfPlayer; i++) {
-            String resultList
+            System.out.println(";");
         }
     }
 }
