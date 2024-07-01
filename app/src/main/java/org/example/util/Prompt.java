@@ -12,10 +12,12 @@ public class Prompt {
     }
 
     public static int inputInt(String format, Object... args) {
-        try {
-            return Integer.parseInt(input(format, args));
-        } catch (NumberFormatException e) {
-            System.out.println("숫자로 입력해 주세요.");
+        while (true) {
+            try {
+                return Integer.parseInt(input(format, args));
+            } catch (NumberFormatException e) {
+                System.out.println("숫자로 입력해 주세요.");
+            }
         }
     }
 
