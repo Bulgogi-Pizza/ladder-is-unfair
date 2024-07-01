@@ -11,9 +11,12 @@ public class Prompt {
         return keyboardScanner.nextLine();
     }
 
-
     public static int inputInt(String format, Object... args) {
-        return Integer.parseInt(input(format, args));
+        try {
+            return Integer.parseInt(input(format, args));
+        } catch (NumberFormatException e) {
+            System.out.println("숫자로 입력해 주세요.");
+        }
     }
 
     public static void close() {

@@ -49,15 +49,22 @@ class App {
         ArrayList playerNameList = new ArrayList();
 
         System.out.println("플레이 할 인원을 정하세요");
-        numOfPlayer = Prompt.inputInt("인원 수 입력 >>");
 
-        for (int i = 0; i < numOfPlayer; i++) {
-            String playerName = Prompt.input("플레이어(" + i + 1 + ") 이름 >>");
-            playerNameList.add(playerName);
-        }
+        while (true) {
+            try {
+                numOfPlayer = Prompt.inputInt("인원 수 입력 >>");
 
-        for (int i = 0; i < numOfPlayer; i++) {
-            System.out.println(";");
+                for (int i = 0; i < numOfPlayer; i++) {
+                    String playerName = Prompt.input("플레이어(" + i + 1 + ") 이름 >>");
+                    playerNameList.add(playerName);
+                }
+
+                for (int i = 0; i < numOfPlayer; i++) {
+                    System.out.println(";");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("숫자로 입력해 주세요.");
+            }
         }
     }
 }
