@@ -46,12 +46,14 @@ class App {
 
     static void startGame() {
         int numOfPlayer;
-        ArrayList playerNameList = new ArrayList();
-
-        System.out.println("플레이 할 인원을 정하세요");
+        ArrayList playerNameList;
 
         while (true) {
             try {
+                playerNameList = new ArrayList();
+
+                System.out.println("플레이 할 인원을 정하세요");
+
                 numOfPlayer = Prompt.inputInt("인원 수 입력 >>");
 
                 for (int i = 0; i < numOfPlayer; i++) {
